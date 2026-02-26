@@ -10,6 +10,8 @@ struct clientData
     char lastName[15];    // account last name
     char firstName[10];   // account first name
     double balance;       // account balance
+    char aadhaar[15];     // ID number 
+    char pan[12];         // PAN number
 };                        // end structure clientData
 
 // prototypes
@@ -164,6 +166,8 @@ void deleteRecord(FILE *fPtr)
         // replace existing record with blank record
         fwrite(&blankClient, sizeof(struct clientData), 1, fPtr);
     } // end else
+    printf("Enter lastnumber firstnumber balance aadhaar pan\n");
+    scanf("%9s%14s%14s%11s%29s%29s%lld", client.aadhaar, client.pan);
 } // end function deleteRecord
 
 // create and insert record
